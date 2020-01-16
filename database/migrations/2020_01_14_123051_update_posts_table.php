@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIsAdminColumnToPostTables extends Migration
+class UpdatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class AddIsAdminColumnToPostTables extends Migration
      */
     public function up()
     {
-        Schema::table('post', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
+            $table->integer('like')->nullable();
             //
         });
     }
@@ -25,8 +26,9 @@ class AddIsAdminColumnToPostTables extends Migration
      */
     public function down()
     {
-        Schema::table('post', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             //
+            $table->dropColumn('like');
         });
     }
 }
