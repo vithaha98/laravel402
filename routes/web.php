@@ -10,14 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route ::get('home','HomeController@showWelcome');
+Route ::get('admin','HomeController@showWelcome');
 Route::get('/', function () {
     return view('welcome');
 });
 Route ::get('profile/{name}','ProfileController@showProfile');
-Route::get('about',function(){
-    return ('Ahihihi');
-});
 Route ::get('about/{theSubject}',function ($theSubject){
     return $theSubject.'Content goes here';
 });
+Route::get('admin/create', 'HomeController@create');
+Route::post('admin/save', 'HomeController@save');
+Route::get('admin/delete/{id}', 'HomeController@delete');
+
+
