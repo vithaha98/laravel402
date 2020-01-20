@@ -18,7 +18,7 @@
                 <td>{{$value->title}}</td>
                 <td>{{$value->content}}</td>
                 <td><a href="admin/delete/{{$value->id}}" class="confirmation">Xoa</a></td>
-                <td><a href="">sua</a></td>
+                <td><a href="admin/update/{{$value->id}}">sua</a></td>
             </tr>
         @endforeach
 

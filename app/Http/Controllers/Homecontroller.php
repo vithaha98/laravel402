@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
+use Models\Post;
 
 
 class Homecontroller extends BaseController
@@ -33,6 +34,13 @@ class Homecontroller extends BaseController
         $delete = DB::table('posts')->where('id','=',$id)->delete();
         return redirect('/admin/');
     }
-
-
+    public function update( $id){
+        $posts = Posts::find($id);
+        return view('/admin/update',compact('posts'));
     }
+    public function saveupdate()
+    {
+        # code...
+    }
+
+}

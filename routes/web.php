@@ -21,5 +21,7 @@ Route ::get('about/{theSubject}',function ($theSubject){
 Route::get('admin/create', 'HomeController@create');
 Route::post('admin/save', 'HomeController@save');
 Route::get('admin/delete/{id}', 'HomeController@delete');
+Route::get('admin/update/{id}', 'HomeController@update');
+
 
 
